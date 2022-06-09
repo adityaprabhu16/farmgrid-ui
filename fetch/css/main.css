@@ -1,0 +1,78 @@
+:root {
+  --primary-color: ;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.1))), url("../images/home.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1)), url("../images/home.jpg");
+  height: 100vh;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  background-color: black;
+  margin: 0;
+}
+
+.container {
+  margin: auto;
+}
+
+.navbar nav {
+  display: none;
+}
+
+.navbar .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  place-content: space-between;
+}
+
+.navbar .container .mobile-menu {
+  width: 2em;
+  height: 2em;
+  padding: 0.2em;
+}
+
+.navbar .container a {
+  color: white;
+}
+
+.navbar .container ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar .container .logo {
+  text-decoration: none;
+  background-color: var(--primary-color);
+  font-size: 1.6em;
+}
+
+.navbar .container .logo .farm {
+  color: #fff;
+  margin-right: -0.45em;
+}
+
+.navbar .container .logo .grid {
+  color: #fff;
+  margin-left: -0.5em;
+}
+
+.navbar .container .logo .logo-img {
+  width: 2em;
+  height: 2em;
+}
+
+.navbar .container .logo .navbar nav {
+  display: none;
+}
+/*# sourceMappingURL=main.css.map */
