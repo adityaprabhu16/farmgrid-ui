@@ -1,0 +1,163 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+:root {
+  --primary-color: 0 4px 8px 0 rgba(0,0,0,0.7), 0 6px 20px 0 rgba(0,0,0,0.4);
+  --secondary-color: white;
+  --quartenary-color: #0a4a09;
+  --tertiary-color: #f2f2f2bf;
+  --button-exit-coor: #E20F24;
+  --center-color: transparent;
+  --border-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+body {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url("../info_images/garden.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../info_images/garden.jpg");
+  height: 100vh;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  background-color: black;
+}
+
+.wrapper {
+  margin: auto;
+  padding-top: 0.5em;
+}
+
+.wrapper .logo {
+  text-decoration: none;
+  color: var(--secondary-color);
+  font-weight: bold;
+  font-size: 1.6em;
+  padding: 0em;
+  margin-left: 2em;
+}
+
+.wrapper .logo .company-left {
+  font-weight: bold;
+  color: var(--secondary-color);
+  letter-spacing: 1px;
+  margin-right: -0.5em;
+}
+
+.wrapper .logo .company-right {
+  font-weight: bold;
+  color: var(--secondary-color);
+  letter-spacing: 1px;
+  margin-left: -0.5em;
+}
+
+.wrapper .logo img {
+  width: 2em;
+  height: 2em;
+  margin-bottom: 12px;
+}
+
+.nav-area {
+  float: right;
+  list-style: none;
+  margin-top: 20px;
+  margin-right: 2em;
+  padding-right: 10px;
+}
+
+.nav-area li {
+  display: inline-block;
+}
+
+.nav-area li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 20px;
+  font-size: 18px;
+}
+
+.nav-area li a:hover {
+  background: #fff;
+  color: #333;
+}
+
+.welcome-text {
+  position: absolute;
+  margin: 10% 40%;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.welcome-text h1 {
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 60px;
+}
+
+.welcome-text p {
+  color: #fff;
+  font-size: 18px;
+}
+
+.welcome-text a:hover {
+  color: white;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.welcome-text .linkedin-tag-1 {
+  padding: 0.5em;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 21px;
+  margin-top: 20px;
+  display: inline-block;
+  color: #fff;
+}
+
+.welcome-text .linkedin-tag:hover {
+  color: black;
+}
+
+.welcome-text .linkedin-tag-2 {
+  padding: 0.5em;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 21px;
+  margin-top: 20px;
+  display: inline-block;
+  color: #fff;
+}
+
+@media only screen and (min-width: 540px) and (max-width: 770px) {
+  .welcome-text h1 {
+    font-size: 30px;
+  }
+  .welcome-text p {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .welcome-text {
+    margin: 20% 30%;
+  }
+  .welcome-text h1 {
+    font-size: 30px;
+  }
+  .welcome-text p {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 345px) {
+  .welcome-text {
+    margin: 40% 20%;
+  }
+}
+/*# sourceMappingURL=info.css.map */

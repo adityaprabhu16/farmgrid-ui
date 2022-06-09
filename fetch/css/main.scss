@@ -1,79 +1,506 @@
-//Design Selectors:
-:root {
-    --primary-color: ;
-}
+//Main advantage of Sass: Nesting Classes
 
-*{ 
+//--1. General Settings--:
+@charset "utf-8";
+*{
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
 }
-
-//Element Selectors:
-//1. Body
+:root {
+    --primary-color: 0 4px 8px 0 rgba(0,0,0,0.7), 0 6px 20px 0 rgba(0,0,0,0.7);
+    --secondary-color: white;
+    --quartenary-color: #0a4a09;
+    --tertiary-color: #f2f2f2bf;
+    --button-exit-coor: #E20F24;
+    --center-color: transparent; //PREVIOUSLY: #c0c5ce
+    --border-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+//--1a. Paragraph & Link Settings--:
+p{
+    color:white;
+    margin: auto;
+    padding: 0.5em;
+    text-indent: 50px;
+    font-size: 20px;
+}
+.bold-group{
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+.website-link{
+    color: var(--secondary-color);
+    font-weight: bold;
+    text-decoration: none;
+}
+//--1b. Body and Unordered List Settings--:
 body {
-    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.1)),
-    url('../images/home.jpg');
-    height: 100vh;  //ensures fill image is proportioned/doesn't repeat
-    background-size: cover; //resizes image to fit the screen
+    background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.1)),url('../images/garden.jpg');
+    height: 100%;
+    background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     position: relative;
-    background-color: black;    //if image too small, make rest of BG black
+    background-color: black;
     margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.container {
-    margin: auto;
+ul {
+    list-style-type: none;  //get rid of bullet-points
+    margin: 0;
+    padding: 0;
 }
 
-
-
-//2. Logo & Container
-.navbar nav {
-    display: none;
+//--2. Header --
+.main-header {
+    background: var(--primary-color);
+    color: white;
+    padding: 1em 0em 0.5em 3em;
+    h1 {
+        font-weight: none;
+    }
 }
 
-.navbar .container {
+//--3. Navigation --
+//navbar: includes both company name, logo image, current page
+.navbar {
+    background: var(--primary-color);
+    padding: 0.5em;
+    .container {
+        display: flex; //have contents of navbar fill the space
+        place-content: space-between;   //push items to far left or far right  
+        .logo {
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-weight: bold;
+            font-size: 1.6em;
+            padding: 0em;
+            .company-left {
+                font-weight: bold;
+                color: var(--secondary-color);
+                letter-spacing: 1px;
+                margin-right: -0.5em;
+            }
+            .company-right{
+                font-weight: bold;
+                color: var(--secondary-color);
+                letter-spacing: 1px;
+                margin-left: -0.5em;
+            }
+            img {
+                width: 2em;
+                height: 2em;
+                margin-bottom: 12px;
+            }
+        }
+    }
+}
+.page {
     display: flex;
-    place-content: space-between;
-    //2a. Hamburger Menu
-    .mobile-menu {
-        width: 2em;
-        height: 2em;
-        padding: 0.2em;
+    .pageother {
+        a {
+            text-decoration: none;
+            font-size: 18px;
+            color: var(--secondary-color);
+            padding: 5px 20px;
+        }
+        //hover over the navbar elements -> change color
+        a:hover {
+            background: #fff;
+            color: #333;
+        }
     }
-    //2b. Links (a)
+}
+.page:hover {
+    color: var(--secondary-color);
+}
+.pagecurrent {
+    margin-right: 1em;
     a {
-        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 18px;
+        color: var(--secondary-color);
+        padding: 5px 20px;
     }
-    //2c. Unordered lists
-    ul {
-        list-style-type: none; //gets rid of the bullet points
-        margin: 0;
-        padding: 0;
+    a:hover {
+        background: #fff;
+        color: #333;
     }
 }
 
-.navbar .container .logo {
-    text-decoration: none;
+//--5. Center --
+.center {
+    width: autopx;
+    margin-left: 25px;
+    margin-right: 25px;
+    height: auto;
+    background: var(--center-color);
+    //box-shadow: var(--border-shadow);
+    box-shadow: none;
+    border-radius: 0.5em;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    .container {
+        padding-top: 20px;
+        padding-right: 30px;
+        padding-bottom: 50px;
+        padding-left: 30px;
+        .info-1b-title{
+            color:white;
+        }
+        //RGB Video
+        .demo-video-container {
+            display: flex;
+            justify-content: center;
+        
+            .demo-video {
+                max-width: 400px;
+                max-height: 400px;
+                width: auto;
+                height: auto;
+                margin-bottom: 2em;
+                box-shadow: var(--primary-color);
+            }
+        }
+        .icons {
+            display: flex;
+            justify-content: center;
+        }
+        .icon {
+            display:inline-block;
+            padding: 20px;
+        }
+        .multigraph {
+            margin-bottom: 20px;
+            .multigraph-body{
+                text-align: center;
+                h1 {
+                    font-size: auto;
+                    color: white;
+                }
+            }
+            #sensorchart{
+                background-color: var(--tertiary-color);
+                box-shadow: var(--border-shadow);
+                padding: 10px;
+                border-radius: 20px;
+            }
+        }
+
+        .unigraph-body {
+            margin-bottom: 20px;
+            text-align: center;
+            h1 {
+                font-size: auto;
+                color: white;
+            }
+            #levelchart{ 
+                background-color: var(--tertiary-color);
+                box-shadow: var(--border-shadow);
+                padding: 10px;
+                border-radius: 20px;
+            }
+        }
+        .pumpgraph-body{
+            margin-bottom: 20px;
+            text-align: center;
+            h1 {
+                font-size: auto;
+                color: white;
+            }
+            #pumpchart{
+                background-color: var(--tertiary-color);
+                box-shadow: var(--border-shadow);
+                padding: 10px;
+                border-radius: 20px;
+            }
+        }
+
+        .buttons {
+            text-align: center;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            border-radius: 0.5em;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            -webkit-transition-duration: 0.4s; //how long animation takes to complete
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+        .onbutton {
+            background-color: white;
+            color: black;
+            margin-left: 2em;
+            margin-right: 0.5em;
+        }
+        .onbutton:hover { //when hovering, we default to .button theme colors
+            background-color: #4CAF50;  //container color
+            color: white;               //text color
+        }
+        .offbutton {
+            background-color: white;
+            color: black;
+            margin-left: 0.5em;
+            margin-right: 2em;
+        }
+        .offbutton:hover {
+            background-color: #ee5860;
+            color: white;
+        }
+        //text-field:
+        //body
+        .textfield {
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            //label
+            .output {
+                position: relative; //make contents within output relative to this container, not entire body
+                font-size: 16px;
+                padding-top: 20px;
+                margin-bottom: 5px;
+                margin-left: 0px;
+                //textarea
+                .result {
+                    padding: 10px 50px;
+                    border: none;
+                    -webkit-appearance: none; //cross platform
+                    border-radius: 0.5em;
+                }
+                //span
+                .placeholder {
+                    position: absolute;
+                    left: 30px;
+                    top: calc(50% + 10px);
+                    transform: translateY(-50%);
+                    color: #aaa;
+                    transition:
+                    top 0.3s ease,
+                    font-size 0.3s ease,
+                    color 0.3s ease;
+                }
+            }
+        }
+        .output .result:valid + .placeholder,
+        .output .result:focus + .placeholder {
+            top: 10px;
+            font-size: 10px;
+            color: #222; //dark-gray
+        }
+    }
+}
+//--6. Footer --
+.footer {
     background-color: var(--primary-color);
-    font-size: 1.6em;
+    padding: 1px;
+    .paragraph {
+        text-align: center;
+        font-weight: bold;
+        color: white;
+        padding-top: 16px;
+    }
+}
 
-    .farm {
-        color: #fff;
-        margin-right: -0.45em;
-    }
-    .grid {
-        color: #fff;
-        margin-left: -0.5em;
-    }
-    .logo-img {
-        width: 2em;
-        height: 2em;
-    }
+//--7. Media Queries -- (Dynamic Sizing)
+@media only screen and (max-width: 1200px) and (min-width: 200px) {
+    //Applies for <=1200px and >=768px
+    .center {
+        width: autopx;
+        margin-left: 25px;
+        margin-right: 25px;
+        height: auto;
+        background: var(--center-color);
+        box-shadow: var(--border-shadow);
+        border-radius: 0.5em;
 
-    .navbar nav {
-        display: none;
+        margin-bottom: 25px;
+        margin-top: 25px;
+        .container {
+            .introduction{
+                .container-info{
+                    .row-1{
+                        .info-1{
+                            display: flex;
+                            justify-content: center;
+                            flex-direction: column;
+                            margin-top: 2em;
+                            .info-1b{
+                                max-width: 1000px;
+                                max-height: 500px;
+                                overflow: scroll;
+                                padding-bottom: 2em;
+                                //Change "right" to "bottom" when screen gets smaller
+                                #iot-visual-location{
+                                    color: transparent;
+                                }
+                                #iot-visual-location:after{
+                                    content: "bottom";
+                                    color: var(--primary-color);
+                                    margin-left: -45px;
+                                }
+                            }
+                            #iot-visual{
+                                margin-top: 1em;
+                                max-width: 800px;
+                                max-height: 800px;
+                                width: auto;
+                                height: auto;
+                            }
+                        }
+                    }
+                    .row-2{
+                        .info-2{
+                            display: flex;
+                            justify-content: center;
+                            flex-direction: column;
+                            margin-bottom: 2em;
+                            #sensor-side{
+                                max-width: 800px;
+                                max-height: 600px;
+                                height: auto;
+                                width: auto;
+                            }
+                            #sensor-side-location{
+                                color:transparent;
+                            }
+                            #sensor-side-location:after{
+                                content: "top";
+                                color: var(--primary-color);
+                                margin-left: -30px;
+                            }
+                        }
+                    }
+                }
+            }
+            padding-top: 10px;
+            padding-right: 30px;
+            padding-bottom: 50px;
+            padding-left: 30px;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px){
+    //screens with width <=600px, the following applies
+    .center {
+        width: autopx;
+        margin-left: 25px;
+        margin-right: 25px;
+        height: auto;
+        background: var(--center-color);
+        box-shadow: var(--border-shadow);
+        border-radius: 0.5em;
+        //margin-left: auto;
+        //margin-right: auto;
+        margin-bottom: 25px;
+        margin-top: 25px;
+        .container {
+            padding-top: 10px;
+            padding-right: 30px;
+            padding-bottom: 50px;
+            padding-left: 30px;
+            .icons {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+            }
+            .icon {
+                display:inline-block;
+                padding: 20px;
+            }
+    
+            .buttons {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+            }
+    
+            .button {
+                background-color: #4CAF50;
+                border: none;
+                color: white;
+                border-radius: 0.5em;
+                padding: 16px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                -webkit-transition-duration: 0.4s; //how long animation takes to complete
+                transition-duration: 0.4s;
+                cursor: pointer;
+            }
+            .onbutton {
+                background-color: white;
+                color: black;
+                margin-left: 2em;
+                margin-right: 0.5em;
+            }
+            .onbutton:hover { //when hovering, we default to .button theme colors
+                background-color: #4CAF50;  //container color
+                color: white;               //text color
+            }
+            .offbutton {
+                margin-top: 1em;
+                background-color: white;
+                color: black;
+                margin-left: 0.5em;
+                margin-right: 2em;
+            }
+            .offbutton:hover {
+                background-color: #ee5860;
+                color: white;
+            }
+            //text-field:
+            //body
+            .textfield {
+                padding: 20px;
+                display: flex;
+                justify-content: center;
+                //label
+                .output {
+                    position: relative; //make contents within output relative to this container, not entire body
+                    font-size: 16px;
+                    padding-top: 20px;
+                    margin-bottom: 5px;
+                    margin-left: 0px;
+                    //textarea
+                    .result {
+                        padding: 10px 50px;
+                        border: none;
+                        -webkit-appearance: none; //cross platform
+                        border-radius: 0.5em;
+                    }
+                    //span
+                    .placeholder {
+                        position: absolute;
+                        left: 30px;
+                        top: calc(50% + 10px);
+                        transform: translateY(-50%);
+                        color: #aaa;
+                        transition:
+                        top 0.3s ease,
+                        font-size 0.3s ease,
+                        color 0.3s ease;
+                    }
+                }
+            }
+            .output .result:valid + .placeholder,
+            .output .result:focus + .placeholder {
+                top: 10px;
+                font-size: 10px;
+                color: #222; //dark-gray
+            }
+    
+        }
+    
     }
 }
