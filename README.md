@@ -1,5 +1,5 @@
 # farmgrid-ui
-The web-service UI for FarmGrid - API and User Data Management. FarmGrid is an IoT based solution for farms and lawns that includes cloud backend integration. 
+MN Cup Semifinalist project: The web-service UI for FarmGrid sensor platform - API and User Data Management. FarmGrid is an IoT based solution for farms and lawns that includes cloud backend integration. 
 
 Navigation:
 1. index.html - Home page of website. This is where the charts and project description currently are. 
